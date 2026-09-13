@@ -1,0 +1,17 @@
+{
+  "name": "@westy/shared",
+  "version": "0.1.0",
+  "description": "Shared domain types and design system for Westy — consumed by both the demo and production repos.",
+  "main": "dist/domain/index.js",
+  "types": "dist/domain/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
