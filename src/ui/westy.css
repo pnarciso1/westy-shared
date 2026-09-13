@@ -1,0 +1,91 @@
+/*
+ * Westy — additive classes layered on top of Modernist (modernist.css).
+ * Import order matters: modernist.css first, this file second, so these
+ * rules can use its tokens.
+ *
+ * These formalize patterns that existed in the Claude Design export only as
+ * repeated inline styles across pages — pulling them into real classes here
+ * means every future screen uses one definition instead of copy-pasting it.
+ */
+
+/* — section label, used across Dashboard/Household/Design-System pages — */
+.wz-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin: 0 0 12px;
+}
+
+/* — loading skeleton, used on Dashboard/Household/Bills/Episode/Appointments/BillDetail — */
+@keyframes wz-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.wz-skel {
+  background: var(--color-neutral-200);
+  animation: wz-pulse 1.4s ease-in-out infinite;
+}
+
+/*
+ * — AI-surface treatment —
+ * The rule, verbatim from Westy-Design-System.dc.html: "accent-100 fill +
+ * accent-300 border + sparkle + 'Westy' label = AI-generated, always.
+ * Anything else is a person's own data." One component, reused everywhere
+ * a message is isAiGenerated: true (chat replies, bill explanations,
+ * document summaries, suggested actions) — never a one-off per screen.
+ */
+.wz-ai {
+  background: var(--color-accent-100);
+  border: 1px solid var(--color-accent-300);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.wz-ai-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.wz-ai-label span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+.wz-ai-body {
+  margin: 0;
+  font-size: 14px;
+}
+
+/*
+ * — non-AI content marker — the deliberate visual opposite of .wz-ai, used
+ * for provenance on manually-entered or document-sourced records (see
+ * FhirResourceRef.source and Document/DocumentReference in the domain
+ * model). A plain surface, no accent tint — the contrast with .wz-ai is
+ * the whole point per the design-system page.
+ */
+.wz-provenance {
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.wz-provenance-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.wz-provenance-label span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}

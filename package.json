@@ -1,17 +1,36 @@
 {
   "name": "@westy/shared",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared domain types and design system for Westy — consumed by both the demo and production repos.",
   "main": "dist/domain/index.js",
   "types": "dist/domain/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/domain/index.d.ts",
+      "default": "./dist/domain/index.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "default": "./dist/ui/index.js"
+    },
+    "./ui/modernist.css": "./src/ui/modernist.css",
+    "./ui/westy.css": "./src/ui/westy.css"
+  },
   "files": [
-    "dist"
+    "dist",
+    "src/ui/modernist.css",
+    "src/ui/westy.css"
   ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "react": ">=18"
+  },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^5.5.0",
+    "react": "^18.3.0",
+    "@types/react": "^18.3.0"
   }
 }
