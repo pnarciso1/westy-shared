@@ -1,6 +1,6 @@
 {
   "name": "@westy/shared",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared domain types and design system for Westy — consumed by both the demo and production repos.",
   "main": "dist/domain/index.js",
   "types": "dist/domain/index.d.ts",
@@ -12,6 +12,10 @@
     "./ui": {
       "types": "./dist/ui/index.d.ts",
       "default": "./dist/ui/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client/index.js"
     },
     "./ui/modernist.css": "./src/ui/modernist.css",
     "./ui/westy.css": "./src/ui/westy.css"
