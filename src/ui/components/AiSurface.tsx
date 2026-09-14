@@ -14,7 +14,7 @@ export function AiSurface({ children }: { children?: ReactNode }) {
         <SparkleIcon />
         <span>Westy</span>
       </div>
-      <p className="wz-ai-body">{children}</p>
+      <div className="wz-ai-body">{children}</div>
     </div>
   );
 }
@@ -38,7 +38,7 @@ export function ProvenanceSurface({
         <DocumentIcon />
         <span>{label}</span>
       </div>
-      <p className="wz-ai-body">{children}</p>
+      <div className="wz-ai-body">{children}</div>
     </div>
   );
 }
