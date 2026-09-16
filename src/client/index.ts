@@ -55,6 +55,8 @@ export interface WestyClient {
   getConnector(connectorId: string): Promise<Connector>;
   retryConnector(connectorId: string): Promise<Connector>;
   disconnectConnector(connectorId: string): Promise<Connector>;
+  /** Deletes a disconnected connector's record entirely — distinct from disconnectConnector, which just flips status and keeps it */
+  removeConnector(connectorId: string): Promise<void>;
 
   // ── Documents ────────────────────────────────────────────────────────
   uploadDocument(input: UploadDocumentInput): Promise<WestyDocument>;
