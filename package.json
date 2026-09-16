@@ -1,6 +1,6 @@
 {
   "name": "@westy/shared",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Shared domain types and design system for Westy — consumed by both the demo and production repos.",
   "main": "dist/domain/index.js",
   "types": "dist/domain/index.d.ts",

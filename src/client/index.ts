@@ -85,6 +85,9 @@ export interface WestyClient {
 
   // ── Care team & tasks ────────────────────────────────────────────────
   listCareTeam(personId: string): Promise<CareTeamMember[]>;
+  addCareTeamMember(input: AddCareTeamMemberInput): Promise<CareTeamMember>;
+  updateCareTeamMember(memberId: string, input: Partial<AddCareTeamMemberInput>): Promise<CareTeamMember>;
+  removeCareTeamMember(memberId: string): Promise<void>;
   listTasks(personId: string): Promise<Task[]>;
   completeTask(taskId: string): Promise<Task>;
 
@@ -113,6 +116,17 @@ export interface AddFamilyMemberInput {
   lastName: string;
   dateOfBirth: string;
   relationshipToCoordinator?: Person["relationshipToCoordinator"];
+}
+
+export interface AddCareTeamMemberInput {
+  personId: string;
+  name: string;
+  role: string;
+  organization?: string;
+  phone?: string;
+  email?: string;
+  website?: string;
+  address?: string;
 }
 
 export interface InitiateConnectorInput {

@@ -14,12 +14,16 @@ export interface Practitioner {
 }
 
 export interface CareTeamMember {
+  id: string;
   /** Whose care team this is */
   personId: string;
   name: string;
   role: string;
   organization?: string;
   phone?: string;
+  email?: string;
+  website?: string;
+  address?: string;
 }
 
 /**
