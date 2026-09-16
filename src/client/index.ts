@@ -11,6 +11,7 @@ import type {
   Appointment,
   AppointmentRequest,
   Bill,
+  Charge,
   Anomaly,
   CareTeamMember,
   ChatThread,
@@ -77,6 +78,7 @@ export interface WestyClient {
   // ── Billing ──────────────────────────────────────────────────────────
   listBills(personId: string): Promise<Bill[]>;
   getBill(billId: string): Promise<Bill>;
+  getCharges(chargeIds: string[]): Promise<Charge[]>;
   getAnomaly(anomalyId: string): Promise<Anomaly>;
   payBill(billId: string): Promise<Bill>;
   disputeBill(billId: string, reason?: string): Promise<Bill>;
